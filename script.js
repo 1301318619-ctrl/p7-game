@@ -1,14 +1,23 @@
 console.log("Script started");
-
+let currentSize = 50;
+let timeLeft = 20;
 
 // Start the game
 function start() {
     createSquare(50, "red");
-    createSquare(80, "green");
-    createSquare(90, "blue");
-    createSquare(110, "orange");
+    createSquare(60, "green");
+    createSquare(70, "blue");
+    createSquare(80, "orange");
     console.log(Math.random() * 1000);
+    setTimeout(updateTimer, 1000);
 }
+
+function updateTimer() {
+    let timer = document.getElementById("timer");
+    timeLeft = timeLeft - 1;
+    timer.innerText = timeLeft + "s";
+}
+
 
 // Creates a square
 function createSquare(size, color) {
@@ -41,11 +50,18 @@ function getRandomX() {
 function getRandomY() {
     let randY = Math.random() * window.innerHeight;
     return randY;
-}
+    
+    
+    // Handle the player clicking a square
 
-// Handle the player clicking a square
-function handleClick(event) {
-    let square = event.target;
-    console.log(square);
-    // Make a size pattern i.e. increase by the same amount each 10, 20, 30, ...
 }
+function handleClick(event) {
+     let square = event.target;
+    console.log(square.style.width);
+    if (square.style.width == 50 + "px") {
+        console.log("first square");
+        square.
+    }
+}
+    
+   
